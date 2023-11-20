@@ -135,7 +135,7 @@ const loadVideoMetadata = (file, targetLessonNumber) => {
     const video = document.createElement("video");
     video.preload = "metadata";
     video.onloadedmetadata = () => {
-        console.log("onloadedmetadata first line");
+        console.log("onloadedmetadata first line"); // 나중 실행
         window.URL.revokeObjectURL(video.src);
         const videoDuration = video.duration;
         if (videoDuration < 1) {
@@ -160,5 +160,5 @@ const loadVideoMetadata = (file, targetLessonNumber) => {
         }
     }
     video.src = window.URL.createObjectURL(file);
-    console.log("loadVideoMetadata last line");
+    console.log("loadVideoMetadata last line"); // 먼저 실행
 }
